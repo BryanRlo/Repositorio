@@ -1,0 +1,21 @@
+<p>menu</p>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="sidenav">
+      <!-- Contenido del menú -->
+      <mat-nav-list>
+        <a mat-list-item href="#">Inicio</a>
+        <a mat-list-item href="#">Nosotros</a>
+        <a mat-list-item href="#">Login</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Menú</span>
+      </mat-toolbar>
+      <!-- Contenido de la página principal -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>

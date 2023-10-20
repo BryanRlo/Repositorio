@@ -22,14 +22,21 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MenuComponent } from './menu/menu.component';
+import { TablaComponent } from './tabla/tabla.component';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-
+import {MatTableModule} from '@angular/material/table';
 
 const appRoutes: Routes=[
   {path:'inicio',component:InicioComponent},
   {path:'nosotros',component:NosotrosComponent},
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent},
+  {path:'menu',component:MenuComponent},
+  {path:'tabla',component:TablaComponent}
 ]
 
 @NgModule({
@@ -37,7 +44,9 @@ const appRoutes: Routes=[
     AppComponent,
     InicioComponent,
     NosotrosComponent,
-    LoginComponent
+    LoginComponent,
+    MenuComponent,
+    TablaComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -54,7 +63,11 @@ const appRoutes: Routes=[
     MatListModule,
     MatIconModule,
     MatSelectModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatTableModule
     
 
 

@@ -5,6 +5,8 @@
   
   .sidenav {
     width: 250px;
+    height: 100%;
+    position: absolute;
   }
   
   .content {
@@ -22,7 +24,6 @@
     left: 0;
     right: 0;  
 }
-
 
 table {
     width: 100%;

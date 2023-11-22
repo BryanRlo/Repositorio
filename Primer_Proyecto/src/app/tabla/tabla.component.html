@@ -18,6 +18,8 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
+<button class="btn success" style="margin-left: 45%;" (click)="openPopup()">Abrir Ventana</button>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -50,3 +52,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  
+
+ 

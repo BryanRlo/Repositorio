@@ -30,13 +30,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import {MatTableModule} from '@angular/material/table';
+import { ClientesComponent } from './clientes/clientes.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { RutasComponent } from './rutas/rutas.component';
 
 const appRoutes: Routes=[
   {path:'inicio',component:InicioComponent},
   {path:'nosotros',component:NosotrosComponent},
   {path:'login',component:LoginComponent},
   {path:'menu',component:MenuComponent},
-  {path:'tabla',component:TablaComponent}
+  {path:'tabla',component:TablaComponent},
+  {path:'clientes',component:ClientesComponent},
+  {path:'rutas',component:RutasComponent}
+
+  
+
 ]
 
 @NgModule({
@@ -46,9 +62,12 @@ const appRoutes: Routes=[
     NosotrosComponent,
     LoginComponent,
     MenuComponent,
-    TablaComponent
+    TablaComponent,
+    ClientesComponent,
+    RutasComponent
   ],
   imports: [
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true}
@@ -67,7 +86,13 @@ const appRoutes: Routes=[
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    MatTableModule
+    MatTableModule,
+
+    FormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatDividerModule
+
     
 
 

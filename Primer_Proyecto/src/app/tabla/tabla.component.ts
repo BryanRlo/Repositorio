@@ -20,11 +20,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {matricula: 12752, curp: 'AAMK030619MNLLRRB6', nombre: 'Karen Sofia Alvarez Martinez', telefono: 8211066839},
   {matricula: 12761, curp: 'COLC010315HCHRPRA2', nombre: 'Carlos Manuel Cortes Lopez', telefono: 6761141373},
   {matricula: 12755, curp: 'BORG040523HNLRMSA7', nombre: 'Gustavo Angel Borrego Ramírez', telefono: 8211202886},
-  {matricula: 12782, curp: 'SIGR040605HNLLRYA', nombre: 'José Reynaldo Sillas Guerrero', telefono: 8261542697},
-  {matricula: 12754, curp: 'BEGF040906HTSRZLA1', nombre: 'Felipe de Jesús Bernal Gazca', telefono: 8341303508},
+  {matricula: 12782, curp: 'SIGR040605HNLLRYA',  nombre: 'José Reynaldo Sillas Guerrero', telefono: 8261542697},
   {matricula: 12765, curp: 'FUIM050817HNLNRNA0', nombre: 'Jose Manuel de la Fuente Iracheta', telefono: 8135585770},
   {matricula: 12779, curp: 'RURJ041030HNLBYRA0', nombre: 'Jorge Alberto Rubio Reyna', telefono: 5631723441},
-  {matricula: 12762, curp: ' COPJ040126HVZRRNA4', nombre: 'Jonathan Cortes Pérez', telefono: 8287686734},
+  {matricula: 12762, curp: 'COPJ040126HVZRRNA4', nombre: 'Jonathan Cortes Pérez', telefono: 8287686734},
  
 ];
 
@@ -39,4 +38,37 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TablaComponent {
   displayedColumns: string[] = ['matricula', 'curp', 'nombre', 'telefono'];
   dataSource = ELEMENT_DATA;
+
+  openPopup() {
+
+    const popupWindow = window.open('', '_blank', 'width=300,height=300');
+    
+    if (popupWindow) {
+
+      const popupContent = `
+        <html>
+        <head>
+          <title>Datos</title>
+        </head>
+        <body >
+          <h2 >Insertar Datos</h2>
+          <form>
+            <input type="text" placeholder="Nombre">
+                     <input type="number" placeholder="Matricula">
+                    <input type="text" placeholder="Curp">
+               <input type="number" placeholder="Telefono">
+                <button  type="submit">Enviar</button>
+          </form>
+        </body>
+        </html>
+      `;
+  
+      popupWindow.document.open();
+      popupWindow.document.write(popupContent);
+      popupWindow.document.close();
+    } else {
+
+      console.error('No se pudo abrir la ventana emergente.');
+    }
+  }
 }
